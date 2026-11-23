@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>RSVP Responses</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="page page-wide">
+      <h1 class="responses-title">Aman's birthday RSVPs <span aria-hidden="true">📋</span></h1>
+
+      <section class="card" id="lock">
+        <form id="pass-form" class="pass-form">
+          <label class="field">
+            <span>Passcode</span>
+            <input id="passcode" type="password" autocomplete="current-password" required />
+          </label>
+          <p class="form-error" id="pass-error" role="alert" hidden></p>
+          <button type="submit" class="btn btn-primary btn-block" id="unlock">View responses</button>
+        </form>
+      </section>
+
+      <section id="results" hidden>
+        <div class="stats">
+          <div class="stat"><span class="stat-num" id="stat-adults">0</span><span class="stat-label">Adults coming</span></div>
+          <div class="stat"><span class="stat-num" id="stat-kids">0</span><span class="stat-label">Kids coming</span></div>
+          <div class="stat stat-accent"><span class="stat-num" id="stat-total">0</span><span class="stat-label">Total coming</span><span class="stat-sub" id="stat-total-sub"></span></div>
+          <div class="stat"><span class="stat-num" id="stat-maybe">0</span><span class="stat-label">Maybe</span><span class="stat-sub" id="stat-maybe-sub"></span></div>
+          <div class="stat"><span class="stat-num" id="stat-no">0</span><span class="stat-label">Not coming</span></div>
+        </div>
+
+        <div class="toolbar">
+          <span class="muted" id="updated"></span>
+          <div class="toolbar-actions">
+            <button type="button" class="btn btn-secondary" id="refresh">Refresh</button>
+            <button type="button" class="link-btn" id="lock-btn">Lock</button>
+          </div>
+        </div>
+
+        <div class="card table-card">
+          <p class="muted empty" id="empty" hidden>No RSVPs yet.</p>
+          <table id="table">
+            <thead><tr><th>Name</th><th>Response</th><th class="num">Adults</th><th class="num">Kids</th><th>Last updated</th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/responses.ts"></script>
+  </body>
+</html>

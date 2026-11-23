@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aman Turns One!</title>
+    <meta name="description" content="Join Jayanth & Sai to celebrate Aman's first birthday — Sunday, December 20, 2026, 6–9 PM at Nalan Indian Cuisine, Downingtown." />
+    <meta property="og:title" content="Aman is turning ONE! 🎂" />
+    <meta property="og:description" content="Sunday, Dec 20 · 6–9 PM · Nalan Indian Cuisine, Downingtown. Please RSVP!" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="video-frame">
+          <video src="/aman.mp4" autoplay muted loop playsinline disablepictureinpicture preload="auto" aria-label="A short video of Aman"></video>
+        </div>
+        <div class="hero-text">
+          <p class="eyebrow">You're invited!</p>
+          <h1>Aman is turning <span class="one">ONE!</span> <span aria-hidden="true">🎂</span></h1>
+          <p class="hero-sub">Sunday, December 20 · 6–9 PM</p>
+          <a class="btn btn-primary" href="#rsvp">RSVP</a>
+        </div>
+      </section>
+
+      <section class="card note" aria-labelledby="note-title">
+        <h2 id="note-title" class="visually-hidden">A note from Aman</h2>
+        <p class="note-hi">Hi! It's me, Aman! <span aria-hidden="true">👶</span></p>
+        <p>I've spent the past year mastering clapping, babbling, and the very advanced art of putting everything in my mouth. My wobbly steps are coming along too (gravity and I are still negotiating). And now… <strong>I'm turning ONE!</strong></p>
+        <p>Mama and Dada say I'm "not allowed to plan my own party yet," so they did it. But make no mistake, I am still the boss. So please come eat yummy food, sing to me loudly (applause is also accepted), and help me blow out my very first candle, because apparently I'm not allowed to grab it. <span aria-hidden="true">🕯️</span></p>
+        <p>Attendance is mandatory. I already told my parents you'd be there.</p>
+        <p class="note-ps">P.S. Cuddles are optional but strongly encouraged. <span aria-hidden="true">💛</span></p>
+        <p class="signoff">Love, Aman Rudhra<br /><span>with Jayanth &amp; Sai</span></p>
+      </section>
+
+      <section class="card details" aria-labelledby="details-title">
+        <h2 id="details-title">The party</h2>
+        <ul class="facts">
+          <li><span class="icon" aria-hidden="true">📅</span><div><strong>Sunday, December 20, 2026</strong></div></li>
+          <li><span class="icon" aria-hidden="true">⏰</span><div><strong>6:00 – 9:00 PM</strong></div></li>
+          <li><span class="icon" aria-hidden="true">📍</span><div><strong>Nalan Indian Cuisine</strong><br />Downingtown, PA</div></li>
+        </ul>
+        <div class="map">
+          <iframe
+            title="Map showing Nalan Indian Cuisine, Downingtown"
+            src="https://maps.google.com/maps?q=Nalan%20Indian%20Cuisine%20Downingtown%20PA&ll=40.0180148,-75.6864721&z=15&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <a class="btn btn-secondary" href="https://maps.app.goo.gl/BfWokHpm3sHznXRj6" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+      </section>
+
+      <section class="card rsvp" id="rsvp" aria-labelledby="rsvp-title">
+        <h2 id="rsvp-title">RSVP</h2>
+
+        <form id="rsvp-form" novalidate>
+          <label class="field">
+            <span>Name</span>
+            <input id="name" name="name" type="text" autocomplete="name" maxlength="80" required />
+          </label>
+
+          <fieldset class="field">
+            <legend>Will you join us?</legend>
+            <div class="choice">
+              <button type="button" class="choice-btn" data-response="yes" aria-pressed="false">🎉 Yes, we'll be there!</button>
+              <button type="button" class="choice-btn" data-response="maybe" aria-pressed="false">🤔 Maybe</button>
+              <button type="button" class="choice-btn" data-response="no" aria-pressed="false">😢 Sorry, can't make it</button>
+            </div>
+          </fieldset>
+
+          <div class="field" id="counts-field" hidden>
+            <span>How many from your household?</span>
+            <div class="counts">
+              <div class="count-row">
+                <span id="adults-label">Adults</span>
+                <div class="stepper" role="group" aria-labelledby="adults-label" data-stepper="adults">
+                  <button type="button" data-step="-1" aria-label="Fewer adults">−</button>
+                  <output aria-live="polite">1</output>
+                  <button type="button" data-step="1" aria-label="More adults">+</button>
+                </div>
+              </div>
+              <div class="count-row">
+                <span id="children-label">Children</span>
+                <div class="stepper" role="group" aria-labelledby="children-label" data-stepper="children">
+                  <button type="button" data-step="-1" aria-label="Fewer children">−</button>
+                  <output aria-live="polite">0</output>
+                  <button type="button" data-step="1" aria-label="More children">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+          <button type="submit" class="btn btn-primary btn-block" id="submit">Send RSVP</button>
+        </form>
+
+        <div class="thanks" id="thanks" hidden>
+          <p class="thanks-emoji" id="thanks-emoji" aria-hidden="true">🎉</p>
+          <p class="thanks-title" id="thanks-title">See you on the 20th!</p>
+          <p class="thanks-detail" id="thanks-detail"></p>
+          <button type="button" class="link-btn" id="change">Change my answer</button>
+        </div>
+      </section>
+
+      <footer class="footer">With love, Jayanth &amp; Sai <span aria-hidden="true">💛</span></footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
